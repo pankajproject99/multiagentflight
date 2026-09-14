@@ -101,6 +101,18 @@ Details:
 - Branch: master
 - Files present: project-log.md, langgraph_env3/
 
+Git push status:
+- Initial push command: git push -u origin main
+- Result: rejected because the remote branch has a different commit history
+- Error: non-fast-forward
+- Cause: local repo is behind the remote repository
+
+Resolution required:
+- Use git fetch origin
+- Use git pull origin main --rebase
+- If there are conflicts, resolve them
+- Then push again
+
 Notes:
 - The project is now ready to be connected to a GitHub repository.
 - Before pushing, we should add a .gitignore to exclude virtual environments and local cache files.

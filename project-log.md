@@ -107,10 +107,16 @@ Git push status:
 - Error: non-fast-forward
 - Cause: local repo is behind the remote repository
 
+Git rebase status:
+- Attempted command: git pull origin main --rebase
+- Result: failed because the working tree contains uncommitted changes
+- Error: "Your index contains uncommitted changes. Please commit or stash them."
+
 Resolution required:
-- Use git fetch origin
-- Use git pull origin main --rebase
-- If there are conflicts, resolve them
+- Add or update .gitignore to exclude the virtual environment and local cache files
+- Commit the working files, or stash them before rebasing
+- Run git pull origin main --rebase again
+- Resolve any conflicts if present
 - Then push again
 
 Notes:
